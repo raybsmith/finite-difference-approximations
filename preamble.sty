@@ -1,0 +1,138 @@
+% Declare that this style file requires at least LaTeX version 2e.
+\NeedsTeXFormat{LaTeX2e}
+
+% Provide the name of your page, the date it was last updated, and a comment about what it's used for
+\ProvidesPackage{preamble}[2016/03/16 Ray Smith's LaTeX preamble]
+
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{fancyhdr}
+%\usepackage{cancel}
+%\usepackage{subcaption}
+\usepackage{hyperref}
+%% allow dots in file names (for 20130925 figures)
+%\usepackage[multidot]{grffile}
+%% Change ``Chapter'' to ``Lecture'' for headings
+%\renewcommand{\chaptername}{Lecture}
+
+%\pagestyle{fancyplain}
+%\numberwithin{equation}{section}
+
+% Fix strange spacing of \left and \right operators
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+% Math
+\DeclareMathOperator\erf{erf}
+\DeclareMathOperator\erfc{erfc}
+\DeclareMathOperator\ierf{ierf}
+\DeclareMathOperator\ierfc{ierfc}
+% Shorthands for symbols
+\newcommand{\bnab}{\boldsymbol{\nabla}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\ovl}[1]{\overline{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\dvg}{\bnab\cdot}
+\newcommand{\wtdvg}{\wt{\bnab}\cdot}
+\newcommand{\curl}{\bnab\times}
+\newcommand{\sdt}{\sqrt{Dt}}
+%\newcommand{\erf}{\mathrm{erf}}
+%\newcommand{\ierf}{\textrm{ierf}}
+%\newcommand{\erfc}{\textrm{erfc}}
+%\newcommand{\ierfc}{\textrm{ierfc}}
+\newcommand{\cnst}{\mathrm{constant}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ud}{\,\mathrm{d}}
+\newcommand{\eps}{\epsilon}
+%\newcommand{\re}{\textrm{Re}}
+%\newcommand{\pr}{\textrm{Pr}}
+%\newcommand{\pe}{\textrm{Pe}}
+%\newcommand{\ns}{\textrm{Nu}}
+%\newcommand{\sh}{\textrm{Sh}}
+% misc.
+\newcommand{\ml}{\mathcal{L}}
+% Fonts
+%\newcommand{\cp}{\mathcal{P}}
+%\newcommand{\cp}{\wp}
+%\newcommand{\cp}{\mathfrak{P}}
+\usepackage{mathrsfs}
+\newcommand{\cp}{\mathscr{P}}
+\newcommand{\ch}{\mathscr{H}}
+% Bolds
+\newcommand{\be}{\textbf{e}}
+\newcommand{\bfo}{\textbf{F}}
+\newcommand{\bn}{\textbf{n}}
+\newcommand{\bt}{\textbf{t}}
+\newcommand{\bv}{\textbf{v}}
+\newcommand{\bu}{\textbf{u}}
+\newcommand{\bw}{\textbf{w}}
+\newcommand{\bg}{\textbf{g}}
+\newcommand{\bq}{\textbf{q}}
+\newcommand{\bz}{\textbf{0}}
+\newcommand{\bj}{\textbf{j}}
+\newcommand{\br}{\textbf{r}}
+\newcommand{\bE}{\textbf{E}}
+\newcommand{\bN}{\textbf{N}}
+\newcommand{\bJ}{\textbf{J}}
+% Tildes
+\newcommand{\tv}{\widetilde{v}}
+\newcommand{\tbv}{\widetilde{\bv}}
+\newcommand{\tcp}{\widetilde{\cp}}
+\newcommand{\tbnab}{\widetilde{\bnab}}
+\newcommand{\tnab}{\widetilde{\nabla}}
+\newcommand{\tdvg}{\widetilde{\bnab}\cdot}
+\newcommand{\tdel}{\widetilde{\delta}}
+\newcommand{\tx}{\widetilde{x}}
+\newcommand{\ty}{\widetilde{y}}
+\newcommand{\tz}{\widetilde{z}}
+\newcommand{\ts}{\widetilde{s}}
+\newcommand{\tu}{\widetilde{u}}
+\newcommand{\tr}{\widetilde{r}}
+\newcommand{\tc}{\widetilde{c}}
+\newcommand{\tte}{\widetilde{t}}
+\newcommand{\tJ}{\widetilde{J}}
+\newcommand{\tD}{\widetilde{D}}
+\newcommand{\tpsi}{\widetilde{\psi}}
+\newcommand{\tphi}{\widetilde{\phi}}
+\newcommand{\tPhi}{\widetilde{\Phi}}
+\newcommand{\trho}{\widetilde{\rho}}
+% Hats
+\newcommand{\hy}{\widehat{y}}
+\newcommand{\hx}{\widehat{x}}
+\newcommand{\hv}{\widehat{v}}
+\newcommand{\hc}{\widehat{c}}
+\newcommand{\hr}{\widehat{r}}
+\newcommand{\hU}{\widehat{U}}
+\newcommand{\hH}{\widehat{H}}
+\newcommand{\hC}{\widehat{C}}
+\newcommand{\ct}{\widehat{\theta}}
+\newcommand{\hpsi}{\widehat{\psi}}
+\newcommand{\hphi}{\widehat{\phi}}
+\newcommand{\hrho}{\widehat{\rho}}
+% Bars
+\newcommand{\bbt}{\bar{\theta}}
+\newcommand{\baru}{\overline{u}}
+\newcommand{\bns}{\overline{\ns}}
+\newcommand{\bcp}{\overline{\cp}}
+\newcommand{\bbv}{\overline{\bv}}
+\newcommand{\barv}{\overline{v}}
+\newcommand{\bbphi}{\overline{\phi}}
+\newcommand{\bblam}{\overline{\lambda}}
+\newcommand{\bbc}{\overline{c}}
+\newcommand{\bbE}{\overline{E}}
+\newcommand{\bbH}{\overline{H}}
+\newcommand{\bbC}{\overline{C}}
+
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\dbltopfraction}{0.9}
+
+% Finally, we'll use \endinput to indicate that LaTeX can stop reading this file. LaTeX will ignore anything after this line.
+\endinput
